@@ -2,41 +2,42 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>我喜歡的飲料</title>
+  <title>喜歡的飲料</title>
 </head>
 <body>
-  <h1>我喜歡的飲料</h1>
-  <div style="margin-bottom: 20px;">
-    <h2>橫式</h2>
-    <div id="horizontalTable"></div>
-  </div>
-  <div>
-    <h2>直式</h2>
-    <div id="verticalTable"></div>
-  </div>
+  <h2>喜歡的飲料</h2>
   <script>
-    const drinks = [
-      "卡布奇諾咖啡",
-      "拿鐵咖啡",
-      "珍珠奶茶",
-      "長島冰茶",
-      "愛爾蘭咖啡",
-      "藍色夏威夷",
-      "英式水果冰茶"
+   
+    let drinks = [
+      '卡布奇諾咖啡', 
+      '拿鐵咖啡',    
+      '珍珠奶茶',     
+      '長島冰茶',     
+      '愛爾蘭咖啡',  
+      '藍色夏威夷',  
+      '英式水果冰茶' 
     ];
 
-    // 橫式表格
-    document.getElementById("horizontalTable").innerHTML =
-      `<table border="1">
-        <tr>${drinks.map((_,i)=>`<th>飲料${i+1}</th>`).join('')}</tr>
-        <tr>${drinks.map(name=>`<td>${name}</td>`).join('')}</tr>
-      </table>`;
+    
+    document.write('<h3>橫式</h3>');
+    document.write('<table border="1"><tr>');
+    for(let i = 0; i < drinks.length; i++) {
+      document.write('<td>飲料' + (i + 1) + '</td>');
+    }
+    document.write('</tr><tr>');
+    for(let i = 0; i < drinks.length; i++) {
+      document.write('<td>' + drinks[i] + '</td>');
+    }
+    document.write('</tr></table>');
 
-    // 直式表格
-    document.getElementById("verticalTable").innerHTML =
-      `<table border="1">
-        ${drinks.map((name,i)=>`<tr><td>飲料${i+1}</td><td>${name}</td></tr>`).join('')}
-      </table>`;
+  
+    document.write('<h3>直式</h3>');
+    document.write('<table border="1">');
+    for(let i = 0; i < drinks.length; i++) {
+      document.write('<tr><td>飲料' + (i + 1) + '</td>');
+      document.write('<td>' + drinks[i] + '</td></tr>');
+    }
+    document.write('</table>');
   </script>
 </body>
 </html>
