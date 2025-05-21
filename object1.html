@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //建立物件
+    let man = {
+        age: 20,
+        name: "小鍾",
+        talk: function() {
+            //使用this
+            console.log("Hello 我是", this.name, "年齡", this.age);
+        }
+    };
+    //使用物件
+    document.write("Hello 我是" + man.name + ", 年齡" + man.age + "<br>");
+    checkAge(man.age);
+
+    function checkAge(age) {
+        if (age >= 20) {
+            document.write("已成年");
+        } else {
+            document.write("未成年");
+        }
+    }
+</script>    
+</body>
+</html>
